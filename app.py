@@ -4,11 +4,11 @@ import dash_html_components as html
 import plotly.graph_objs as go
 
 ########### Set up the chart
-beers=['Chesapeake Stout', 'Snake Dog IPA', 'Imperial Porter', 'Double Dog IPA']
+beers=['Stout', 'IPA', 'Porter', 'Double IPA']
 ibu_values=[35, 60, 85, 75]
 abv_values=[5.4, 7.1, 9.2, 4.3]
-color1='lightblue'
-color2='darkgreen'
+color1='black' # ='lightblue'
+color2='green' # ='darkgreen' 
 
 bitterness = go.Bar(
     x=beers,
@@ -26,7 +26,7 @@ alcohol = go.Bar(
 beer_data = [bitterness, alcohol]
 beer_layout = go.Layout(
     barmode='group',
-    title = 'Beer Comparison'
+    title = 'Comparison'
 )
 
 beer_fig = go.Figure(data=beer_data, layout=beer_layout)
@@ -42,9 +42,9 @@ app.layout = html.Div(children=[
         id='flyingdog',
         figure=beer_fig
     ),
-    html.A('Code on Github', href='https://github.com/austinlasseter/flying-dog-beers'),
+    html.A('Code on Github', href='https://github.com/leodenale/HerokuExample/'),
     html.Br(),
-    html.A('Data Source', href='https://www.flyingdog.com/beers/'),
+    html.A('Data Source', href='https://www.google.com/'),
     ]
 )
 
